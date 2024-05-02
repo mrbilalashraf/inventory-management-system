@@ -25,3 +25,11 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+# Website Execution
+When the app launches, a navbar is displayed containing products and sales menus:
+1. Click on products menu, it will display list of products (if available in database).
+2. Click on any product to update or delete it.
+3. Add product option is displayed below the list of products. Where a product can be added.
+4. If the quantity of a product is updated i.e. it is now less than the previous quantity. The quantity sold property of sales is updated accordingly.
+5. Open up the sales menu to see the changes. Available list of sales is shown.
