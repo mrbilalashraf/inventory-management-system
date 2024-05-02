@@ -1,0 +1,23 @@
+<div class="sales-container">
+  <h2>Sales</h2>
+  <table class="sales-table">
+    <thead>
+      <tr>
+        <th>Product Name</th>
+        <th>Quantity Sold</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let sale of sales">
+        <td>{{ sale.product.name }}</td>
+        <td>
+          <input
+            type="number"
+            [(ngModel)]="sale.quantitySold"
+            disabled="true"
+          />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

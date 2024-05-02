@@ -1,0 +1,82 @@
+<div class="products-container">
+  <h2>Products</h2>
+
+  <!-- Product List -->
+  <ul>
+    <li *ngFor="let product of products" (click)="onSelect(product)">
+      {{ product.name }}
+    </li>
+  </ul>
+
+  <!-- Selected Product Details -->
+  <div *ngIf="selectedProduct">
+    <h3>Edit Product</h3>
+    <form #productForm="ngForm" (ngSubmit)="editProduct()">
+      <label for="name">Name:</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        [(ngModel)]="selectedProduct!.name"
+        required
+      />
+
+      <label for="description">Description:</label>
+      <input
+        type="text"
+        id="description"
+        name="description"
+        [(ngModel)]="selectedProduct!.description"
+        required
+      />
+
+      <label for="quantity">Quantity:</label>
+      <input
+        type="number"
+        id="quantity"
+        name="quantity"
+        [(ngModel)]="selectedProduct!.quantity"
+        required
+      />
+
+      <button type="submit">Update Product</button>
+      <button type="button" (click)="deleteProduct(selectedProduct!.id)">
+        Delete Product
+      </button>
+      <button type="button" (click)="clearSelected()">Cancel</button>
+    </form>
+  </div>
+
+  <!-- Add New Product Form -->
+  <h3>Add New Product</h3>
+  <form #newProductForm="ngForm" (ngSubmit)="addProduct()">
+    <label for="newProductName">Name:</label>
+    <input
+      type="text"
+      id="newProductName"
+      name="newProductName"
+      [(ngModel)]="newProduct.name"
+      required
+    />
+
+    <label for="newProductDescription">Description:</label>
+    <input
+      type="text"
+      id="newProductDescription"
+      name="newProductDescription"
+      [(ngModel)]="newProduct.description"
+      required
+    />
+
+    <label for="newProductQuantity">Quantity:</label>
+    <input
+      type="number"
+      id="newProductQuantity"
+      name="newProductQuantity"
+      [(ngModel)]="newProduct.quantity"
+      required
+    />
+
+    <button type="submit">Add Product</button>
+  </form>
+</div>
